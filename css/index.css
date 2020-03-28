@@ -1,0 +1,221 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+.contents {
+    position: absolute;
+    top: 26%;
+    left: 0;
+    right: 0;
+    color: #FFF;
+    text-align: center;
+    font-family: "lato", sans-serif;
+    font-weight: 300;
+    font-size: 50px;
+    letter-spacing: 10px;
+    margin-top: -60px;
+    /* padding-left: 10px; */
+}
+
+.title {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    /* height: 100vh; */
+    /* width: 100vw; */
+    background: transparent;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 50px;
+    color: #fff;
+    margin: 0 auto;
+}
+
+span {
+    margin: auto;
+    text-align: center;
+    font-size: 5vw;
+    font-family: 'Cinzel';
+    letter-spacing: 8px;
+    font-weight: lighter;
+}
+
+.animation {
+    position: relative;
+    width: 100%;
+}
+
+.animation div {
+    overflow: hidden;
+    width: 50%;
+    height: 100%;
+    transform: skewX(-20deg);
+}
+
+.animation div::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 4px;
+    background: #fff;
+}
+
+.animation span {
+    padding: 0 10px;
+}
+
+.animation-left::before {
+    left: 0;
+    animation: widthLineLeft 1.2s 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.1) forwards;
+}
+
+.animation-left span {
+    display: block;
+    animation: slideLeft 1.2s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.1) forwards;
+    transform: translateX(200px) skewX(20deg);
+}
+
+.animation-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.animation-right:before {
+    bottom: 0;
+    right: 0;
+    animation: widthLineRight 1.2s 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.1) forwards;
+}
+
+.animation-right span {
+    position: absolute;
+    width: 100%;
+    left: -100%;
+    transform: translateX(-200px) skewX(20deg);
+    animation: slideRight 1.2s 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.1) forwards;
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(200px) skewX(20deg);
+    }
+    to {
+        transform: translateX(0%) skewX(20deg);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(-200px) skewX(20deg);
+    }
+    to {
+        transform: translateX(0%) skewX(20deg);
+    }
+}
+
+@keyframes widthLineLeft {
+    0% {
+        width: 0%;
+        left: 0%;
+    }
+    50% {
+        width: 100%;
+        left: 0%;
+    }
+    100% {
+        width: 0%;
+        left: 100%;
+    }
+}
+
+@keyframes widthLineRight {
+    0% {
+        width: 0%;
+        right: 0%;
+    }
+    50% {
+        width: 100%;
+        right: 0%;
+    }
+    100% {
+        width: 0%;
+        right: 100%;
+    }
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    color: white;
+    letter-spacing: 6px;
+    margin-top: 3%;
+    font-size: 3vw;
+    font-weight: normal;
+}
+
+.avatar {
+    width: 250px;
+    height: 250px;
+    box-sizing: border-box;
+    border: 5px white solid;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    -webkit-transform: translatey(0px);
+    transform: translatey(0px);
+    -webkit-animation: float 6s ease-in-out infinite;
+    animation: float 6s ease-in-out infinite;
+    animation-duration: 6s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: float;
+    margin: 0 auto;
+    display: table;
+    background: white;
+}
+
+.avatar img {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    margin-right: 25%;
+}
+
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+}
