@@ -1,156 +1,228 @@
 @font-face {
-    font-family: cursive;
-    src: url("/fonts/Shink\ Font\ by\ Rifki\ \(7NTypes\).otf");
+  font-family: cursive;
+  src: url("/fonts/Shink\ Font\ by\ Rifki\ \(7NTypes\).otf");
 }
 
 body {
-    background-image: url("/photos/bg.jpg");
-    /* Set a specific height */
-    min-height: 500px;
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+  background-image: url("../photos/bg.jpg");
+  /* Set a specific height */
+  min-height: 500px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.preloader {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: none repeat scroll 0 0 #ffffff;
+}
+
+.sk-rotating-plane {
+  width: 50px;
+  height: 50px;
+  background-color: #222;
+  -webkit-animation: sk-rotatePlane 1.2s infinite ease-in-out;
+  animation: sk-rotatePlane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotatePlane {
+  0% {
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+@keyframes sk-rotatePlane {
+  0% {
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
 }
 
 .jumbotron {
-    background: transparent;
+  background: transparent;
 }
 
 .brace {
-    width: auto;
-    min-width: 35px;
-    padding-bottom: 20px;
-    font-size: 2em;
-    line-height: 2em;
-    position: relative;
-    text-align: center;
-    vertical-align: middle;
-    margin: 0 15px 15px;
-    border: none;
-    background-color: transparent;
-    background-image: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0) 14.5px, #fff 15.5px, #fff 19.5px, rgba(255, 255, 255, 0) 20.5px), radial-gradient(circle at 35px 0, rgba(255, 255, 255, 0) 14.5px, #fff 15.5px, #fff 19.5px, rgba(255, 255, 255, 0) 20.5px);
-    background-size: 35px 20px;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    text-transform: lowercase;
-    font-style: italic;
-    color: #fff;
-    -webkit-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
-    overflow: visible;
+  width: auto;
+  min-width: 35px;
+  padding-bottom: 20px;
+  font-size: 2em;
+  line-height: 2em;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 15px 15px;
+  border: none;
+  background-color: transparent;
+  background-image: radial-gradient(
+      circle at 0 0,
+      rgba(255, 255, 255, 0) 14.5px,
+      #fff 15.5px,
+      #fff 19.5px,
+      rgba(255, 255, 255, 0) 20.5px
+    ),
+    radial-gradient(
+      circle at 35px 0,
+      rgba(255, 255, 255, 0) 14.5px,
+      #fff 15.5px,
+      #fff 19.5px,
+      rgba(255, 255, 255, 0) 20.5px
+    );
+  background-size: 35px 20px;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  text-transform: lowercase;
+  font-style: italic;
+  color: #fff;
+  -webkit-filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+  overflow: visible;
 }
 
 .brace:before {
-    width: 50%;
-    border-top: 5px solid #fff;
-    border-left: 1px solid transparent;
-    /* play with this until you like the look of it */
-    border-top-left-radius: 20% 30px;
-    height: 100%;
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: -15px;
-    box-sizing: border-box;
-    margin-top: -5px;
+  width: 50%;
+  border-top: 5px solid #fff;
+  border-left: 1px solid transparent;
+  /* play with this until you like the look of it */
+  border-top-left-radius: 20% 30px;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -15px;
+  box-sizing: border-box;
+  margin-top: -5px;
 }
 
 .brace:after {
-    width: 50%;
-    border-top: 5px solid #fff;
-    border-right: 1px solid transparent;
-    /* play with this until you like the look of it */
-    border-top-right-radius: 20% 30px;
-    height: 100%;
-    content: "";
-    position: absolute;
-    top: 100%;
-    right: -15px;
-    box-sizing: border-box;
-    margin-top: -5px;
+  width: 50%;
+  border-top: 5px solid #fff;
+  border-right: 1px solid transparent;
+  /* play with this until you like the look of it */
+  border-top-right-radius: 20% 30px;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: -15px;
+  box-sizing: border-box;
+  margin-top: -5px;
 }
 
 .card {
-    -webkit-box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.75);
-    border-radius: 10px 10px 10px 10px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
-    border: 0px solid #000000;
+  -webkit-box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 4px 20px 5px rgba(0, 0, 0, 0.75);
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
 }
 
-.jumbotron>h1 {
-    font-family: 'Cinzel', sans-serif;
-    letter-spacing: 2px;
-    font-family: Shrink;
-    text-align: center;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+.jumbotron > h1 {
+  font-family: "Cinzel", sans-serif;
+  letter-spacing: 2px;
+  font-family: Shrink;
+  text-align: center;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
 .card-title {
-    font-family: 'Lobster', cursive;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 300;
-    font-style: normal;
-    padding: 2%;
+  font-family: "Lobster", cursive;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 300;
+  font-style: normal;
+  padding: 2%;
 }
 
 @-webkit-keyframes zoom {
-    from {
-        -webkit-transform: scale(1, 1);
-    }
-    to {
-        -webkit-transform: scale(1.5, 1.5);
-    }
+  from {
+    -webkit-transform: scale(1, 1);
+  }
+  to {
+    -webkit-transform: scale(1.5, 1.5);
+  }
 }
 
 @keyframes zoom {
-    from {
-        transform: scale(1, 1);
-    }
-    to {
-        transform: scale(1.5, 1.5);
-    }
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(1.5, 1.5);
+  }
 }
 
-.carousel-item>img {
-    -webkit-animation: zoom 20s;
-    animation: zoom 20s;
+.carousel-item > img {
+  -webkit-animation: zoom 20s;
+  animation: zoom 20s;
 }
 
-.carousel-caption>h5 {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 600;
-    text-shadow: 4px 1px 7px rgb(0, 0, 0);
-    font-size: 30px;
+.carousel-caption {
+  z-index: 0;
+}
+
+#carouselExampleIndicators {
+  z-index: 0;
+}
+
+.carousel-caption > h5 {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+  text-shadow: 4px 1px 7px rgb(0, 0, 0);
+  font-size: 30px;
 }
 
 .quote {
-    padding: 1%;
-    margin-top: 5%;
+  padding: 1%;
+  margin-top: 5%;
 }
 
-.quote>span {
-    font-family: 'Lobster', cursive;
-    font-size: 20px;
+.quote > span {
+  font-family: "Lobster", cursive;
+  font-size: 20px;
 }
 
 .card-text {
-    margin-top: 2%;
-    padding: 5%;
-    font-family: 'Goudy Bookletter 1911', serif;
-    font-size: 20px;
+  margin-top: 2%;
+  padding: 5%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
 }
 
-
 /* hds */
-
 
 /* .pfcard {
     position: absolute;
@@ -163,237 +235,237 @@ body {
 } */
 
 .pfcard {
-    padding: 3%;
+  padding: 3%;
 }
 
 .pfcard .image {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .pfcard .image img {
-    width: 100%;
-    transition: .5s;
+  width: 100%;
+  transition: 0.5s;
 }
 
 .pfcard:hover .image img {
-    opacity: .5;
-    transform: translateX(30%);
-    /*100%*/
+  opacity: 0.5;
+  transform: translateX(30%);
+  /*100%*/
 }
 
 .pfcard .details {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 70%;
-    /*100%*/
-    height: 100%;
-    background: #080079;
-    transition: .5s;
-    transform-origin: left;
-    transform: perspective(2000px) rotateY(-90deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  /*100%*/
+  height: 100%;
+  background: #080079;
+  transition: 0.5s;
+  transform-origin: left;
+  transform: perspective(2000px) rotateY(-90deg);
 }
 
 .pfcard:hover .details {
-    transform: perspective(2000px) rotateY(0deg);
+  transform: perspective(2000px) rotateY(0deg);
 }
 
 .pfcard .details .center {
-    padding: 20px;
-    text-align: center;
-    background: #fff;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .pfcard .details .center h1 {
-    margin: 0;
-    padding: 0;
-    color: #ff3636;
-    line-height: 20px;
-    font-size: 20px;
-    text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  color: #ff3636;
+  line-height: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .pfcard .details .center h1 span {
-    font-size: 14px;
-    color: #262626;
+  font-size: 14px;
+  color: #262626;
 }
 
 .pfcard .details .center p {
-    margin: 10px 0;
-    padding: 0;
-    color: #000000;
+  margin: 10px 0;
+  padding: 0;
+  color: #000000;
 }
 
 .pfcard .details .center ul {
-    margin: 10px auto 0;
-    padding: 0;
-    display: table;
+  margin: 10px auto 0;
+  padding: 0;
+  display: table;
 }
 
 .pfcard .details .center ul li {
-    list-style: none;
-    margin: 0 5px;
-    float: left;
+  list-style: none;
+  margin: 0 5px;
+  float: left;
 }
 
 .pfcard .details .center ul li a {
-    display: block;
-    background: #262626;
-    color: #fff;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    transform: .5s;
+  display: block;
+  background: #262626;
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  transform: 0.5s;
 }
 
 .pfcard .details .center ul li a:hover {
-    background: #ff3636;
+  background: #ff3636;
 }
 
 .map {
-    margin-top: 4%;
-    padding: 3%;
+  margin-top: 4%;
+  padding: 3%;
 }
 
 .box {
-    padding: 5%;
-    /* background-color: #222; */
-    font-family: 'Open Sans', sans-serif;
-    overflow: hidden;
-    position: relative;
-    -webkit-box-shadow: 10px 10px 28px -9px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 28px -9px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 28px -9px rgba(0, 0, 0, 0.75);
-    border-radius: 10px 0px 10px 0px;
-    -moz-border-radius: 10px 0px 10px 0px;
-    -webkit-border-radius: 10px 0px 10px 0px;
-    border: 0px solid #000000;
+  padding: 5%;
+  /* background-color: #222; */
+  font-family: "Open Sans", sans-serif;
+  overflow: hidden;
+  position: relative;
+  -webkit-box-shadow: 10px 10px 28px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 28px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 28px -9px rgba(0, 0, 0, 0.75);
+  border-radius: 10px 0px 10px 0px;
+  -moz-border-radius: 10px 0px 10px 0px;
+  -webkit-border-radius: 10px 0px 10px 0px;
+  border: 0px solid #000000;
 }
 
 .box:before,
 .box:after {
-    content: '';
-    background: #ff7b08;
-    width: 10px;
-    height: 90%;
-    box-shadow: 15px 0 0 #ff7b08;
-    transform: skewY(50deg);
-    position: absolute;
-    bottom: -100%;
-    left: 5px;
-    z-index: 1;
-    transition: all 0.45s ease;
+  content: "";
+  background: #ff7b08;
+  width: 10px;
+  height: 90%;
+  box-shadow: 15px 0 0 #ff7b08;
+  transform: skewY(50deg);
+  position: absolute;
+  bottom: -100%;
+  left: 5px;
+  z-index: 1;
+  transition: all 0.45s ease;
 }
 
 .box:after {
-    box-shadow: -15px 0 0 #ff7b08;
-    left: auto;
-    right: 5px;
-    bottom: auto;
-    top: -100%;
+  box-shadow: -15px 0 0 #ff7b08;
+  left: auto;
+  right: 5px;
+  bottom: auto;
+  top: -100%;
 }
 
 .box:hover:before {
-    bottom: -10px;
+  bottom: -10px;
 }
 
 .box:hover:after {
-    top: -10px;
+  top: -10px;
 }
 
 .box img {
-    width: 100%;
-    height: auto;
-    transition: all 0.45s;
+  width: 100%;
+  height: auto;
+  transition: all 0.45s;
 }
 
 .box:hover img {
-    opacity: 0.3;
-    filter: grayscale(90%);
+  opacity: 0.3;
+  filter: grayscale(90%);
 }
 
 .box .box-content {
-    color: #fff;
-    text-align: center;
-    width: 100%;
-    padding: 0 30px;
-    opacity: 0;
-    transform: translateX(-50%) translateY(-50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transition: all 0.45s ease;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 0 30px;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: all 0.45s ease;
 }
 
 .box:hover .box-content {
-    opacity: 1;
+  opacity: 1;
 }
 
 .box .title {
-    color: black;
-    font-size: 23px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin: 0 0 2px;
+  color: black;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 2px;
 }
 
 .box .post {
-    color: #ff7b08;
-    font-size: 16px;
-    text-transform: capitalize;
-    font-weight: bold;
+  color: #ff7b08;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
 .box .icon {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    opacity: 0;
-    transform: translateX(-50%) rotateX(90deg);
-    transform-origin: bottom center;
-    position: absolute;
-    left: 50%;
-    bottom: 10px;
-    transition: all 0.3s ease;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  opacity: 0;
+  transform: translateX(-50%) rotateX(90deg);
+  transform-origin: bottom center;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transition: all 0.3s ease;
 }
 
 .box:hover .icon {
-    opacity: 1;
-    transform: translateX(-50%) rotateX(0);
+  opacity: 1;
+  transform: translateX(-50%) rotateX(0);
 }
 
 .box .icon li {
-    display: inline-block;
-    margin: 0 2px;
+  display: inline-block;
+  margin: 0 2px;
 }
 
 .box .icon li a {
-    color: #fff;
-    background-color: #ff7b08;
-    font-size: 14px;
-    text-align: center;
-    line-height: 35px;
-    height: 35px;
-    width: 35px;
-    border-radius: 50%;
-    display: block;
-    transition: all 0.3s;
+  color: #fff;
+  background-color: #ff7b08;
+  font-size: 14px;
+  text-align: center;
+  line-height: 35px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: block;
+  transition: all 0.3s;
 }
 
 .box .icon li a:hover {
-    color: #ff7b08;
-    background-color: #fff;
+  color: #ff7b08;
+  background-color: #fff;
 }
 
-@media only screen and (max-width:990px) {
-    .box {
-        margin: 0 0 30px;
-    }
+@media only screen and (max-width: 990px) {
+  .box {
+    margin: 0 0 30px;
+  }
 }
